@@ -42,6 +42,14 @@ func (il IntList) Get(key int) int {
 	}
 	return 0
 }
+
+//allows the setting of a new number to an existing key in the IntList. Cannot be used to push
+func (il IntList) Set(key int, val int) {
+	if key >= 0 && key < il.record["insert"] {
+		il.list[key] = val
+	}
+}
+
 //appends a new integer to the left side of the list, by moving all current elements up by one
 func (il IntList) Pushleft(elem int) {
 	for i:=il.record["last"] ;i>=0;i-- {

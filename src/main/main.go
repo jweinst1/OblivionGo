@@ -15,7 +15,8 @@ func main() {
   tester.Push(8)
   tester.Pushleft(1)
   fmt.Println(tester)
-  fmt.Println(tester.Tostring())
+  tester.Set(1, 88)
+  fmt.Println(tester)
 }
 //prints 7
 
