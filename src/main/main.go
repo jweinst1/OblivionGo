@@ -13,10 +13,11 @@ func main() {
   tester := intobjects.CreateIntList()
   tester.Push(5)
   tester.Push(8)
-  tester.Pushleft(1)
-  fmt.Println(tester)
-  tester.Set(1, 88)
-  fmt.Println(tester)
+  tester.Push(9)
+  tester.Push(10)
+  tester.Push(11)
+  tester.Push(12)
+  fmt.Println(tester.Getfirst())
 }
 //prints 7
 

@@ -34,6 +34,18 @@ func (il IntList) Pop() int {
 	}
 	return 0
 }
+//method for removing from the intlist at some index. Only works if index is in range
+func (il IntList) Remove(key int) {
+	if _, has := il.list[key]; has {
+		delete(il.list, key)
+		for i:=key;i<il.record["last"];i++ {
+			il.list[i] = il.list[i+1]
+		}
+		il.record["last"] -= 1
+		il.record["insert"] -= 1
+		delete(il.list, il.record["insert"])
+	}
+}
 //gets an element in the inlist by the given int key
 func (il IntList) Get(key int) int {
 	got, has := il.list[key]
@@ -58,6 +70,10 @@ func (il IntList) Pushleft(elem int) {
 	il.list[0] = elem
 	il.record["last"] += 1
 	il.record["insert"] += 1
+}
+//gets the first element in the intlist
+func (il IntList) Getfirst() int {
+	return il.list[0]
 }
 
 //gets a pretty string form of the IntList
